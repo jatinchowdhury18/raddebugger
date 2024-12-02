@@ -18,6 +18,7 @@ struct D_Target
   String8 stderr_path;
   String8 stdin_path;
   B32 debug_subprocesses;
+  B32 leave_console_open;
   String8List env;
 };
 
@@ -332,14 +333,14 @@ struct D_State
   Arena *arena;
   U64 frame_index;
   U64 frame_eval_memread_endt_us;
-  
+
   // rjf: commands
   Arena *cmds_arena;
   D_CmdList cmds;
-  
+
   // rjf: output log key
   U128 output_log_key;
-  
+
   // rjf: per-run caches
   D_UnwindCache unwind_cache;
   U64 tls_base_cache_reggen_idx;
@@ -352,11 +353,11 @@ struct D_State
   U64 member_cache_reggen_idx;
   D_RunLocalsCache member_caches[2];
   U64 member_cache_gen;
-  
+
   // rjf: view rule specification table
   U64 view_rule_spec_table_size;
   D_ViewRuleSpec **view_rule_spec_table;
-  
+
   // rjf: user -> ctrl driving state
   Arena *ctrl_last_run_arena;
   D_RunKind ctrl_last_run_kind;
@@ -371,7 +372,7 @@ struct D_State
   B32 ctrl_soft_halt_issued;
   Arena *ctrl_msg_arena;
   CTRL_MsgList ctrl_msgs;
-  
+
   // rjf: ctrl -> user reading state
   CTRL_EntityStore *ctrl_entity_store;
   Arena *ctrl_stop_arena;

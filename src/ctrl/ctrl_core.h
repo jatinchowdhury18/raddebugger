@@ -95,6 +95,7 @@ X(U64, id,                 "ID")\
 X(Rng1U64, vaddr_range,    "Address Range")\
 X(U32, color,              "Color")\
 X(CTRL_CheckB32, debug_subprocesses,"Debug Subprocesses")\
+X(CTRL_CheckB32, leave_console_open,"Leave Console Open")\
 Y(String8, type(CTRL_CodeString8),  label,             "Label")\
 Y(String8, type(CTRL_PathString8),  exe,               "Executable Path")\
 Y(String8, type(CTRL_PathString8),  dbg,               "Debug Info Path")\
@@ -154,6 +155,7 @@ struct_members(CTRL_TargetMetaEval)
   member_lit_comp(CTRL_MetaEval, type(CTRL_PathString8), stderr_path,        .pretty_name = str8_lit_comp("Standard Error Path")),
   member_lit_comp(CTRL_MetaEval, type(CTRL_PathString8), stdin_path,         .pretty_name = str8_lit_comp("Standard Input Path")),
   member_lit_comp(CTRL_MetaEval, type(CTRL_CheckB32),    debug_subprocesses, .pretty_name = str8_lit_comp("Debug Subprocesses")),
+  member_lit_comp(CTRL_MetaEval, type(CTRL_CheckB32),    leave_console_open, .pretty_name = str8_lit_comp("Leave Console Open")),
 };
 
 struct_members(CTRL_PinMetaEval)
@@ -563,6 +565,7 @@ struct CTRL_Msg
   U32 exit_code;
   B32 env_inherit;
   B32 debug_subprocesses;
+  B32 leave_console_open;
   U64 exception_code_filters[(CTRL_ExceptionCodeKind_COUNT+63)/64];
   String8 path;
   String8List entry_points;
@@ -598,11 +601,11 @@ typedef enum CTRL_EventKind
 {
   CTRL_EventKind_Null,
   CTRL_EventKind_Error,
-  
+
   //- rjf: starts/stops
   CTRL_EventKind_Started,
   CTRL_EventKind_Stopped,
-  
+
   //- rjf: entity creation/deletion
   CTRL_EventKind_NewProc,
   CTRL_EventKind_NewThread,
@@ -610,25 +613,25 @@ typedef enum CTRL_EventKind
   CTRL_EventKind_EndProc,
   CTRL_EventKind_EndThread,
   CTRL_EventKind_EndModule,
-  
+
   //- rjf: thread freeze state changes
   CTRL_EventKind_ThreadFrozen,
   CTRL_EventKind_ThreadThawed,
-  
+
   //- rjf: debug info changes
   CTRL_EventKind_ModuleDebugInfoPathChange,
-  
+
   //- rjf: debug strings / decorations
   CTRL_EventKind_DebugString,
   CTRL_EventKind_ThreadName,
   CTRL_EventKind_ThreadColor,
-  
+
   //- rjf: memory
   CTRL_EventKind_MemReserve,
   CTRL_EventKind_MemCommit,
   CTRL_EventKind_MemDecommit,
   CTRL_EventKind_MemRelease,
-  
+
   CTRL_EventKind_COUNT
 }
 CTRL_EventKind;
@@ -871,16 +874,16 @@ struct CTRL_State
 {
   Arena *arena;
   CTRL_WakeupFunctionType *wakeup_hook;
-  
+
   // rjf: name -> register/alias hash tables for eval
   E_String2NumMap arch_string2reg_tables[Arch_COUNT];
   E_String2NumMap arch_string2alias_tables[Arch_COUNT];
-  
+
   // rjf: caches
   CTRL_ProcessMemoryCache process_memory_cache;
   CTRL_ThreadRegCache thread_reg_cache;
   CTRL_ModuleImageInfoCache module_image_info_cache;
-  
+
   // rjf: user -> ctrl msg ring buffer
   U64 u2c_ring_size;
   U8 *u2c_ring_base;
@@ -888,7 +891,7 @@ struct CTRL_State
   U64 u2c_ring_read_pos;
   OS_Handle u2c_ring_mutex;
   OS_Handle u2c_ring_cv;
-  
+
   // rjf: ctrl -> user event ring buffer
   U64 c2u_ring_size;
   U64 c2u_ring_max_string_size;
@@ -897,7 +900,7 @@ struct CTRL_State
   U64 c2u_ring_read_pos;
   OS_Handle c2u_ring_mutex;
   OS_Handle c2u_ring_cv;
-  
+
   // rjf: ctrl thread state
   String8 ctrl_thread_log_path;
   OS_Handle ctrl_thread;
@@ -915,7 +918,7 @@ struct CTRL_State
   U64 process_counter;
   Arena *dbg_dir_arena;
   CTRL_DbgDirNode *dbg_dir_root;
-  
+
   // rjf: user -> memstream ring buffer
   U64 u2ms_ring_size;
   U8 *u2ms_ring_base;

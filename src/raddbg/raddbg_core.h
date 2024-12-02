@@ -55,14 +55,14 @@ enum
   RD_EntityKindFlag_CanEnable                = (1<<4),
   RD_EntityKindFlag_CanCondition             = (1<<5),
   RD_EntityKindFlag_CanDuplicate             = (1<<6),
-  
+
   //- rjf: name categorization
   RD_EntityKindFlag_NameIsCode               = (1<<7),
   RD_EntityKindFlag_NameIsPath               = (1<<8),
-  
+
   //- rjf: lifetime categorization
   RD_EntityKindFlag_UserDefinedLifetime      = (1<<9),
-  
+
   //- rjf: serialization
   RD_EntityKindFlag_IsSerializedToConfig     = (1<<10),
 };
@@ -79,7 +79,7 @@ enum
   RD_EntityFlag_HasU64            = (1<<4),
   RD_EntityFlag_HasColor          = (1<<6),
   RD_EntityFlag_DiesOnRunStop     = (1<<8),
-  
+
   //- rjf: ctrl entity equipment
   RD_EntityFlag_HasCtrlHandle     = (1<<9),
   RD_EntityFlag_HasArch           = (1<<10),
@@ -88,11 +88,11 @@ enum
   RD_EntityFlag_HasTLSRoot        = (1<<13),
   RD_EntityFlag_HasVAddrRng       = (1<<14),
   RD_EntityFlag_HasVAddr          = (1<<15),
-  
+
   //- rjf: file properties
   RD_EntityFlag_IsFolder          = (1<<16),
   RD_EntityFlag_IsMissing         = (1<<17),
-  
+
   //- rjf: deletion
   RD_EntityFlag_MarkedForDeletion = (1<<31),
 };
@@ -217,34 +217,34 @@ struct RD_View
   // rjf: allocation links (for iterating all views)
   RD_View *alloc_next;
   RD_View *alloc_prev;
-  
+
   // rjf: ownership links ('owners' can have lists of views)
   RD_View *order_next;
   RD_View *order_prev;
-  
+
   // rjf: transient view children
   RD_View *first_transient;
   RD_View *last_transient;
-  
+
   // rjf: view specification info
   struct RD_ViewRuleInfo *spec;
-  
+
   // rjf: allocation info
   U64 generation;
-  
+
   // rjf: loading animation state
   F32 loading_t;
   F32 loading_t_target;
   U64 loading_progress_v;
   U64 loading_progress_v_target;
-  
+
   // rjf: view project (for project-specific/filtered views)
   Arena *project_path_arena;
   String8 project_path;
-  
+
   // rjf: view state
   UI_ScrollPt2 scroll_pos;
-  
+
   // rjf: view-lifetime allocation & user data extensions
   Arena *arena;
   RD_ArenaExt *first_arena_ext;
@@ -253,17 +253,17 @@ struct RD_View
   RD_TransientViewSlot *transient_view_slots;
   RD_TransientViewNode *free_transient_view_node;
   void *user_data;
-  
+
   // rjf: filter mode
   B32 is_filtering;
   F32 is_filtering_t;
-  
+
   // rjf: params tree state
   Arena *params_arenas[2];
   MD_Node *params_roots[2];
   U64 params_write_gen;
   U64 params_read_gen;
-  
+
   // rjf: text query state
   TxtPt query_cursor;
   TxtPt query_mark;
@@ -284,20 +284,20 @@ struct RD_Panel
   RD_Panel *prev;
   RD_Panel *parent;
   U64 child_count;
-  
+
   // rjf: allocation data
   U64 generation;
-  
+
   // rjf: split data
   Axis2 split_axis;
   F32 pct_of_parent;
-  
+
   // rjf: animated rectangle data
   Rng2F32 animated_rect_pct;
-  
+
   // rjf: tab params
   Side tab_side;
-  
+
   // rjf: stable views (tabs)
   RD_View *first_tab_view;
   RD_View *last_tab_view;
@@ -403,24 +403,25 @@ struct RD_Entity
   RD_Entity *next;
   RD_Entity *prev;
   RD_Entity *parent;
-  
+
   // rjf: metadata
   RD_EntityKind kind;
   RD_EntityFlags flags;
   RD_EntityID id;
   U64 gen;
   U64 alloc_time_us;
-  
+
   // rjf: basic equipment
   TxtPt text_point;
   RD_Handle entity_handle;
   B32 disabled;
   B32 debug_subprocesses;
+  B32 leave_console_open;
   U64 u64;
   Vec4F32 color_hsva;
   RD_CfgSrc cfg_src;
   U64 timestamp;
-  
+
   // rjf: ctrl equipment
   CTRL_Handle ctrl_handle;
   Arch arch;
@@ -428,10 +429,10 @@ struct RD_Entity
   U64 stack_base;
   Rng1U64 vaddr_rng;
   U64 vaddr;
-  
+
   // rjf: string equipment
   String8 string;
-  
+
   // rjf: parameter tree
   Arena *params_arena;
   MD_Node *params_root;
@@ -644,7 +645,7 @@ struct RD_Window
   U64 gen;
   U64 frames_alive;
   RD_CfgSrc cfg_src;
-  
+
   // rjf: top-level info & handles
   Arena *arena;
   OS_Handle os;
@@ -652,20 +653,20 @@ struct RD_Window
   UI_State *ui;
   F32 last_dpi;
   B32 window_temporarily_focused_ipc;
-  
+
   // rjf: config/settings
   RD_SettingVal setting_vals[RD_SettingCode_COUNT];
   UI_Palette cfg_palettes[RD_PaletteCode_COUNT]; // derivative from theme
-  
+
   // rjf: dev interface state
   B32 dev_menu_is_open;
-  
+
   // rjf: menu bar state
   B32 menu_bar_focused;
   B32 menu_bar_focused_on_press;
   B32 menu_bar_key_held;
   B32 menu_bar_focus_press_started;
-  
+
   // rjf: context menu state
   Arena *ctx_menu_arena;
   RD_Regs *ctx_menu_regs;
@@ -675,11 +676,11 @@ struct RD_Window
   U64 ctx_menu_input_string_size;
   TxtPt ctx_menu_input_cursor;
   TxtPt ctx_menu_input_mark;
-  
+
   // rjf: drop-completion state
   Arena *drop_completion_arena;
   String8List drop_completion_paths;
-  
+
   // rjf: autocomplete lister state
   U64 autocomp_last_frame_idx;
   B32 autocomp_input_dirty;
@@ -692,7 +693,7 @@ struct RD_Window
   F32 autocomp_open_t;
   F32 autocomp_num_visible_rows_t;
   S64 autocomp_cursor_num;
-  
+
   // rjf: query view stack
   Arena *query_cmd_arena;
   String8 query_cmd_name;
@@ -702,7 +703,7 @@ struct RD_Window
   B32 query_view_selected;
   F32 query_view_selected_t;
   F32 query_view_t;
-  
+
   // rjf: hover eval state
   B32 hover_eval_focused;
   TxtPt hover_eval_txt_cursor;
@@ -719,20 +720,20 @@ struct RD_Window
   U64 hover_eval_vaddr;
   F32 hover_eval_open_t;
   F32 hover_eval_num_visible_rows_t;
-  
+
   // rjf: error state
   U8 error_buffer[512];
   U64 error_string_size;
   F32 error_t;
-  
+
   // rjf: panel state
   RD_Panel *root_panel;
   RD_Panel *free_panel;
   RD_Panel *focused_panel;
-  
+
   // rjf: per-frame ui events state
   UI_EventList ui_events;
-  
+
   // rjf: per-frame drawing state
   DR_Bucket *draw_bucket;
 };
@@ -808,41 +809,41 @@ struct RD_State
   Arena *arena;
   B32 quit;
   B32 quit_after_success;
-  
+
   // rjf: log
   Log *log;
   String8 log_path;
-  
+
   // rjf: frame history info
   U64 frame_index;
   Arena *frame_arenas[2];
   U64 frame_time_us_history[64];
   U64 num_frames_requested;
   F64 time_in_seconds;
-  
+
   // rjf: frame parameters
   F32 frame_dt;
   DI_Scope *frame_di_scope;
-  
+
   // rjf: dbgi match store
   DI_MatchStore *match_store;
-  
+
   // rjf: ambiguous path table
   U64 ambiguous_path_slots_count;
   RD_AmbiguousPathNode **ambiguous_path_slots;
-  
+
   // rjf: registers stack
   RD_RegsNode base_regs;
   RD_RegsNode *top_regs;
-  
+
   // rjf: autosave state
   F32 seconds_until_autosave;
-  
+
   // rjf: commands
   Arena *cmds_arenas[2];
   RD_CmdList cmds[2];
   U64 cmds_gen;
-  
+
   // rjf: popup state
   UI_Key popup_key;
   B32 popup_active;
@@ -851,50 +852,50 @@ struct RD_State
   RD_CmdList popup_cmds;
   String8 popup_title;
   String8 popup_desc;
-  
+
   // rjf: text editing mode state
   B32 text_edit_mode;
-  
+
   // rjf: string search state
   Arena *string_search_arena;
   String8 string_search_string;
-  
+
   // rjf: eval visualization view cache
   U64 eval_viz_view_cache_slots_count;
   RD_EvalVizViewCacheSlot *eval_viz_view_cache_slots;
   RD_EvalVizViewCacheNode *eval_viz_view_cache_node_free;
-  
+
   // rjf: ctrl entity meta eval cache
   U64 ctrl_entity_meval_cache_slots_count;
   RD_CtrlEntityMetaEvalCacheSlot *ctrl_entity_meval_cache_slots;
-  
+
   // rjf: contextual hover info
   RD_Regs *hover_regs;
   RD_RegSlot hover_regs_slot;
   RD_Regs *next_hover_regs;
   RD_RegSlot next_hover_regs_slot;
-  
+
   // rjf: icon texture
   R_Handle icon_texture;
-  
+
   // rjf: current path
   Arena *current_path_arena;
   String8 current_path;
-  
+
   // rjf: fixed ui keys
   UI_Key drop_completion_key;
   UI_Key ctx_menu_key;
-  
+
   // rjf: drag/drop state
   Arena *drag_drop_arena;
   RD_Regs *drag_drop_regs;
   RD_RegSlot drag_drop_regs_slot;
   RD_DragDropState drag_drop_state;
-  
+
   //-
   // TODO(rjf): TO BE ELIMINATED OR REPLACED VVVVVVVVVVVVVVVV
   //-
-  
+
   // rjf: entity state
   RD_NameChunkNode *free_name_chunks[8];
   Arena *entities_arena;
@@ -905,24 +906,24 @@ struct RD_State
   RD_Entity *entities_free[2]; // [0] -> normal lifetime, not user defined; [1] -> user defined lifetime (& thus undoable)
   U64 entities_free_count;
   U64 entities_active_count;
-  
+
   // rjf: entity query caches
   U64 kind_alloc_gens[RD_EntityKind_COUNT];
   RD_EntityListCache kind_caches[RD_EntityKind_COUNT];
-  
+
   // rjf: key map table
   Arena *key_map_arena;
   U64 key_map_table_size;
   RD_KeyMapSlot *key_map_table;
   RD_KeyMapNode *free_key_map_node;
   U64 key_map_total_count;
-  
+
   // rjf: bind change
   Arena *bind_change_arena;
   B32 bind_change_active;
   String8 bind_change_cmd_name;
   RD_Binding bind_change_binding;
-  
+
   // rjf: windows
   RD_Window *first_window;
   RD_Window *last_window;
@@ -930,14 +931,14 @@ struct RD_State
   U64 window_count;
   B32 last_window_queued_save;
   RD_Handle last_focused_window;
-  
+
   // rjf: view state
   RD_View *first_view;
   RD_View *last_view;
   RD_View *free_view;
   U64 free_view_count;
   U64 allocated_view_count;
-  
+
   // rjf: config reading state
   Arena *cfg_path_arenas[RD_CfgSrc_COUNT];
   String8 cfg_paths[RD_CfgSrc_COUNT];
@@ -945,7 +946,7 @@ struct RD_State
   Arena *cfg_arena;
   RD_CfgTable cfg_table;
   U64 ctrl_exception_code_filters[(CTRL_ExceptionCodeKind_COUNT+63)/64];
-  
+
   // rjf: running theme state
   RD_Theme cfg_theme_target;
   RD_Theme cfg_theme;
@@ -954,10 +955,10 @@ struct RD_State
   String8 cfg_main_font_path;
   String8 cfg_code_font_path;
   FNT_Tag cfg_font_tags[RD_FontSlot_COUNT]; // derivative from font paths
-  
+
   // rjf: global settings
   RD_SettingVal cfg_setting_vals[RD_CfgSrc_COUNT][RD_SettingCode_COUNT];
-  
+
   //-
   // TODO(rjf): TO BE ELIMINATED OR REPLACED ^^^^^^^^^^^^^^^^^^
   //-

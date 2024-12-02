@@ -122,6 +122,7 @@ struct OS_ProcessLaunchParams
   String8List env;
   B32 inherit_env;
   B32 debug_subprocesses;
+  B32 leave_console_open;
   B32 consoleless;
   OS_Handle stdout_file;
   OS_Handle stderr_file;

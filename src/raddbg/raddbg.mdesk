@@ -62,33 +62,33 @@ RD_EntityKindTable:
 {
   {Nil                nil                   nils                          0  0  0  0  0  0  0  0  0  0  0                      "Label"             Null                   "Nil"                        }
   {Root               root                  roots                         0  0  0  0  0  0  0  0  0  0  0                      "Label"             Null                   "Root"                       }
-  
+
   //- rjf: machines
   {Machine            machine               machines                      0  1  0  1  0  0  0  0  0  0  0                      "Label"             Machine                "Machine"                    }
-  
+
   //- rjf: filesystem modeling
   {File               file                  files                         0  0  0  0  0  0  0  0  0  0  0                      "Label"             FileOutline            "File"                       }
-  
+
   //- rjf: auto view rules
   {AutoViewRule       auto_view_rule        auto_view_rules               1  0  0  0  0  0  0  0  0  1  1                      "Label"             Binoculars             "Auto View Rule"             }
-  
+
   //- rjf: file path maps
   {FilePathMap        file_path_map         file_path_maps                1  0  0  0  0  0  0  0  0  0  1                      "Label"             FileOutline            "File Path Map"              }
-  
+
   //- rjf: watch pins
   {WatchPin           watch_pin             watch_pins                    1  0  0  1  0  0  1  1  0  1  1                      "Expression"        Pin                    "Watch Pin"                  }
-  
+
   //- rjf: watches
   {Watch              watch                 watches                       1  0  0  1  1  0  1  1  0  1  1                      "Expression"        Binoculars             "Watch"                      }
   {ViewRule           view_rule             view_rules                    1  0  0  1  1  0  1  1  0  1  0                      "Expression"        Binoculars             "View Rule"                  }
-  
+
   //- rjf: breakpoints
   {Breakpoint         breakpoint            breakpoints                   1  0  0  1  1  1  1  1  0  1  1                      "Label"             CircleFilled           "Breakpoint"                 }
   {Condition          condition             conditions                    0  0  0  0  0  0  0  1  0  1  0                      "Expression"        CircleFilled           "Condition"                  }
-  
+
   //- rjf: user-controlled locations (source, addresses, symbol names)
   {Location           location              locations                     0  0  0  0  0  0  0  1  1  1  0                      "Location"          Null                   "Location"                   }
-  
+
   //- rjf: targets
   {Target             target                targets                       1  0  1  1  1  0  1  0  0  1  1                      "Label"             Target                 "Target"                     }
   {Executable         executable            executables                   0  0  0  0  0  0  0  0  1  1  0                      "Executable"        Null                   "Executable"                 }
@@ -98,29 +98,29 @@ RD_EntityKindTable:
   {StdoutPath         stdout_path           stdout_paths                  0  0  0  0  0  0  0  0  1  1  0                      "Path"              Null                   "Standard Output Path"       }
   {StderrPath         stderr_path           stderr_paths                  0  0  0  0  0  0  0  0  1  1  0                      "Path"              Null                   "Standard Error Path"        }
   {StdinPath          stdin_path            stdin_paths                   0  0  0  0  0  0  0  0  1  1  0                      "Path"              Null                   "Standard Input Path"        }
-  
+
   //- rjf: frontend containers (windows, panels, views)
   {Window             window                windows                       1  0  0  0  0  0  1  0  0  1  1                      "Label"             Window                 "Window"                     }
   {Panel              panel                 panels                        1  0  0  0  0  0  1  0  0  1  1                      "Label"             XSplit                 "Panel"                      }
   {View               view                  views                         1  0  0  0  0  0  1  0  0  1  1                      "Label"             Null                   "View"                       }
-  
+
   //- rjf: recent projects
   {RecentProject      recent_project        recent_projects               0  0  0  0  0  0  0  0  1  0  1                      "Path"              Briefcase              "Recent Project"             }
-  
+
   //- rjf: recent files
   {RecentFile         recent_file           recent_files                  0  0  0  0  0  0  0  0  1  0  1                      "Path"              FileOutline            "Recent File"                }
-  
+
   //- rjf: src -> dst mapping
   {Source             source                sources                       0  0  0  0  0  0  0  0  0  0  0                      "Path"              Null                   "Source"                     }
   {Dest               dest                  dests                         0  0  0  0  0  0  0  0  0  0  0                      "Path"              Null                   "Destination"                }
-  
+
   //- rjf: control system entities
   {Process            process               processes                     0  1  0  1  0  0  0  0  0  0  0                      "Label"             Threads                "Process"                    }
   {Thread             thread                threads                       0  1  0  1  0  0  0  0  0  0  0                      "Label"             Thread                 "Thread"                     }
   {Module             module                modules                       0  0  0  0  0  0  0  0  0  0  0                      "Label"             Module                 "Module"                     }
   {PendingThreadName  pending_thread_name   pending_thread_names          0  0  0  0  0  0  0  0  0  0  0                      "Label"             Threads                "Pending Thread Name"        }
   {DebugInfoPath      debug_info_path       debug_info_paths              0  0  0  0  0  0  0  0  0  0  0                      "Label"             Module                 "Debug Info Path"            }
-  
+
   //- rjf: parser task entities
   {ConversionTask     conversion_task       conversion_tasks              0  0  0  1  0  0  0  0  0  0  0                      "Label"             Null                   "Conversion Task"            }
   {ConversionFail     conversion_fail       conversion_fails              0  0  0  1  0  0  0  0  0  0  0                      "Label"             Null                   "Conversion Failure"         }
@@ -176,11 +176,11 @@ RD_RegTable:
   {RD_Handle         dst_panel        DstPanel      }
   {RD_Handle         entity           Entity        }
   {RD_HandleList     entity_list      EntityList    }
-  
+
   // rjf: frame selection
   {U64              unwind_count     UnwindCount   }
   {U64              inline_depth     InlineDepth   }
-  
+
   // rjf: code / address location info
   {String8          file_path        FilePath      }
   {TxtPt            cursor           Cursor        }
@@ -193,7 +193,7 @@ RD_RegTable:
   {U64              voff             Voff          }
   {Rng1U64          vaddr_range      VaddrRange    }
   {Rng1U64          voff_range       VoffRange     }
-  
+
   // rjf: general parameters
   {U32              pid              PID           }
   {B32              force_confirm    ForceConfirm  }
@@ -240,35 +240,35 @@ RD_CmdTable:    //               |        |              |                  |   
 {
   //- rjf: exiting
   {Exit                           1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           X                     "exit"                        "Exit"                                        "Exits the debugger."                                                                                              "quit,close,abort"               }
-  
+
   //- rjf: command runner
   {RunCommand                     1        1              CmdName            commands          Nil                     Null       0  0  0  0  0  1                                                           Null                  "run_command"                 "Run Command"                                 "Runs a command from the command palette."                                                                         "help,cmd"                       }
-  
+
   //- rjf: os event passthrough
   {OSEvent                        0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "os_event"                    "OS Event"                                    ""                                                                                                                 ""                               }
-  
+
   //- rjf: thread/frame selection
   {SelectThread                   1        1              Thread             null              Nil                     Thread     0  0  0  0  0  1                                                           Null                  "select_thread"               "Select Thread"                               "Selects a thread."                                                                                                ""                               }
   {SelectUnwind                   0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "select_unwind"               "Select Unwind"                               "Selects an unwind frame number for the selected thread."                                                          ""                               }
   {UpOneFrame                     1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           UpArrow               "up_one_frame"                "Up One Frame"                                "Selects the call stack frame above the currently selected."                                                       ""                               }
   {DownOneFrame                   1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           DownArrow             "down_one_frame"              "Down One Frame"                              "Selects the call stack frame below the currently selected."                                                       "callstack,unwind"               }
-  
+
   //- rjf: font sizes
   {IncUIFontScale                 1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "inc_ui_font_scale"           "Increase UI Font Scale"                      "Increases the font size used for UI."                                                                             ""                               }
   {DecUIFontScale                 1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "dec_ui_font_scale"           "Decrease UI Font Scale"                      "Decreases the font size used for UI."                                                                             ""                               }
   {IncCodeFontScale               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "inc_code_font_scale"         "Increase Code Font Scale"                    "Increases the font size used for code."                                                                           ""                               }
   {DecCodeFontScale               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "dec_code_font_scale"         "Decrease Code Font Scale"                    "Decreases the font size used for code."                                                                           ""                               }
-  
+
   //- rjf: windows
   {OpenWindow                     1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Window                "open_window"                 "Open New Window"                             "Opens a new window."                                                                                              ""                               }
   {CloseWindow                    1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Window                "close_window"                "Close Window"                                "Closes an opened window."                                                                                         ""                               }
   {ToggleFullscreen               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Window                "toggle_fullscreen"           "Toggle Fullscreen"                           "Toggles fullscreen view on the active window."                                                                    ""                               }
   {BringToFront                   0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Window                "bring_to_front"              "Bring To Front"                              "Brings all windows to the front, and focuses the most recently focused window."                                   "top"                            }
-  
+
   //- rjf: popups
   {PopupAccept                    0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "popup_accept"                "Popup Accept"                                "Accepts the active popup prompt."                                                                                 ""                               }
   {PopupCancel                    0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "popup_cancel"                "Popup Cancel"                                "Cancels the active popup prompt."                                                                                 ""                               }
-  
+
   //- rjf: panel splitting
   {ResetToDefaultPanels           1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Window                "reset_to_default_panels"     "Reset To Default Panel Layout"               "Resets the window to the default panel layout."                                                                   "panel"                          }
   {ResetToCompactPanels           1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Window                "reset_to_compact_panels"     "Reset To Compact Panel Layout"               "Resets the window to the compact panel layout."                                                                   "panel"                          }
@@ -277,10 +277,10 @@ RD_CmdTable:    //               |        |              |                  |   
   {NewPanelRight                  1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           XSplit                "new_panel_right"             "Split Panel Right"                           "Creates a new panel to the right of the active panel."                                                            "panel"                          }
   {NewPanelDown                   1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           YSplit                "new_panel_down"              "Split Panel Down"                            "Creates a new panel at the bottom of the active panel."                                                           "panel"                          }
   {SplitPanel                     0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "split_panel"                 "Split Panel"                                 "Creates a new panel in a given direction, and moves a tab to it, if specified."                                   ""                               }
-  
+
   //- rjf: panel rotation
   {RotatePanelColumns             1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "rotate_panel_columns"        "Rotate Panel Columns"                        "Rotates all panels at the closest column level of the panel hierarchy."                                           ""                               }
-  
+
   //- rjf: focused panel changing
   {NextPanel                      1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           RightArrow            "next_panel"                  "Focus Next Panel"                            "Cycles the active panel forward."                                                                                 ""                               }
   {PrevPanel                      1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           LeftArrow             "prev_panel"                  "Focus Previous Panel"                        "Cycles the active panel backwards."                                                                               ""                               }
@@ -289,18 +289,18 @@ RD_CmdTable:    //               |        |              |                  |   
   {FocusPanelLeft                 1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           LeftArrow             "focus_panel_left"            "Focus Panel Left"                            "Focuses a panel leftward of the currently focused panel."                                                         ""                               }
   {FocusPanelUp                   1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           UpArrow               "focus_panel_up"              "Focus Panel Up"                              "Focuses a panel upward of the currently focused panel."                                                           ""                               }
   {FocusPanelDown                 1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           DownArrow             "focus_panel_down"            "Focus Panel Down"                            "Focuses a panel downward of the currently focused panel."                                                         ""                               }
-  
+
   //- rjf: undo/redo
   {Undo                           0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Undo                  "undo"                        "Undo"                                        "Undoes the previous action."                                                                                      ""                               }
   {Redo                           0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Redo                  "redo"                        "Redo"                                        "Redoes the first previously undone action."                                                                       ""                               }
-  
+
   //- rjf: focus history
   {GoBack                         0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           LeftArrow             "go_back"                     "Go Back"                                     "Returns to the previously selected panel and tab in recorded history."                                            ""                               }
   {GoForward                      0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           RightArrow            "go_forward"                  "Go Forward"                                  "Returns to the next selected panel and tab in recorded history."                                                  ""                               }
-  
+
   //- rjf: panel removal
   {ClosePanel                     1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           ClosePanel            "close_panel"                 "Close Panel"                                 "Closes the currently active panel."                                                                               ""                               }
-  
+
   //- rjf: panel tab
   {NextTab                        1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           RightArrow            "next_tab"                    "Focus Next Tab"                              "Focuses the next tab on the active panel."                                                                        ""                               }
   {PrevTab                        1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           LeftArrow             "prev_tab"                    "Focus Previous Tab"                          "Focuses the previous tab on the active panel."                                                                    ""                               }
@@ -311,39 +311,39 @@ RD_CmdTable:    //               |        |              |                  |   
   {MoveTab                        0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "move_tab"                    "Move Tab"                                    "Moves a tab to a new panel."                                                                                      ""                               }
   {TabBarTop                      1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           UpArrow               "tab_bar_top"                 "Anchor Tab Bar To Top"                       "Anchors a panel's tab bar to the top of the panel."                                                               ""                               }
   {TabBarBottom                   1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           DownArrow             "tab_bar_bottom"              "Anchor Tab Bar To Bottom"                    "Anchors a panel's tab bar to the bottom of the panel."                                                            ""                               }
-  
+
   //- rjf: files
   {SetCurrentPath                 0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           FileOutline           "set_current_path"            "Set Current Path"                            "Sets the debugger's current path, which is used as a starting point when browsing for files."                     ""                               }
   {Open                           1        1              FilePath           null              Nil                     Null       1  0  0  0  0  1                                                           FileOutline           "open"                        "Open"                                        "Opens a file."                                                                                                    "code,source,file"               }
   {Switch                         1        1              Entity             null              RecentFile              Null       0  0  0  0  0  1                                                           FileOutline           "switch"                      "Switch"                                      "Switches to a recent file."                                                                                       "code,source,file"               }
   {SwitchToPartnerFile            1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           FileOutline           "switch_to_partner_file"      "Switch To Partner File"                      "Switches to the focused file's partner; or from header to implementation or vice versa."                          "code,source,file"               }
   {RecordFileInProject            0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           FileOutline           "record_file_in_project"      "Record File In Project"                      "Records the passed file path as a recent file in the currently loaded project."                                   ""                               }
-  
+
   //- rjf: source <-> disasm
   {GoToDisassembly                1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Glasses               "go_to_disassembly"           "Go To Disassembly"                           "Goes to the disassembly, if any, for a given source code line."                                                   "code,source,disassembly,disasm" }
   {GoToSource                     1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           FileOutline           "go_to_source"                "Go To Source"                                "Goes to the source code, if any, for a given disassembly line."                                                   "code,source,disassembly,disasm" }
-  
+
   //- rjf: override file links
   {SetFileReplacementPath         0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "set_file_replacement_path"   "Set File Replacement Path"                   "Sets the path which should be used as the replacement for the passed file."                                       ""                               }
-  
+
   //- rjf: setting config paths
   {OpenUser                       1        1              FilePath           null              Nil                     Null       1  0  0  0  0  1                                                           Person                "open_user"                   "Open User"                                   "Opens a user file path, immediately loading it, and begins autosaving to it."                                     "load,user,project,layout"       }
   {OpenProject                    1        1              FilePath           null              Nil                     Null       1  0  0  0  0  1                                                           Briefcase             "open_project"                "Open Project"                                "Opens a project file path, immediately loading it, and begins autosaving to it."                                  "project,project,session"        }
   {OpenRecentProject              1        1              Entity             null              RecentProject           Null      0  0  0  0  0  1                                                           Briefcase             "open_recent_project"         "Open Recent Project"                         "Opens a recently used project file."                                                                              "project,project,session"        }
-  
+
   //- rjf: loading/applying stateful config changes
   {ApplyUserData                  0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "apply_user_data"             "Apply User Data"                             "Applies user data from the active user file."                                                                     ""                               }
   {ApplyProjectData               0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "apply_project_data"          "Apply Project Data"                          "Applies project data from the active project file."                                                               ""                               }
-  
+
   //- rjf: writing config changes
   {WriteUserData                  0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "write_user_data"             "Write User Data"                             "Writes user data to the active user file."                                                                        ""                               }
   {WriteProjectData               0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "write_project_data"          "Write Project Data"                          "Writes project data to the active project file."                                                                  ""                               }
-  
+
   //- rjf: meta controls
   {Edit                           1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Pencil                "edit"                        "Edit"                                        "Edits the current selection."                                                                                     ""                               }
   {Accept                         1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           CheckFilled           "accept"                      "Accept"                                      "Accepts current changes, or answers prompts in the affirmative."                                                  ""                               }
   {Cancel                         1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           X                     "cancel"                      "Cancel"                                      "Rejects current changes, exits temporary menus, or answers prompts in the negative."                              ""                               }
-  
+
   //- rjf: directional movement & text controls
   {MoveLeft                       1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "move_left"                   "Move Left"                                   "Moves the cursor or selection left."                                                                              ""                               }
   {MoveRight                      1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "move_right"                  "Move Right"                                  "Moves the cursor or selection right."                                                                             ""                               }
@@ -384,7 +384,7 @@ RD_CmdTable:    //               |        |              |                  |   
   {Cut                            1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Clipboard             "cut"                         "Cut"                                         "Copies the active selection to the clipboard, then deletes it."                                                   ""                               }
   {Paste                          1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Clipboard             "paste"                       "Paste"                                       "Pastes the current contents of the clipboard."                                                                    ""                               }
   {InsertText                     0        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "insert_text"                 "Insert Text"                                 "Inserts the text that was used to cause this command."                                                            ""                               }
-  
+
   //- rjf: code navigation
   {GoToLine                       1        1              Cursor             null              Nil                     Null       0  0  0  0  1  1                                                           Null                  "goto_line"                   "Go To Line"                                  "Jumps to a line number in the current code file."                                                                 ""                               }
   {GoToAddress                    1        1              Vaddr              null              Nil                     Null       0  0  0  0  1  1                                                           Null                  "goto_address"                "Go To Address"                               "Jumps to an address in the current memory or disassembly view."                                                   ""                               }
@@ -394,27 +394,27 @@ RD_CmdTable:    //               |        |              |                  |   
   {FindTextBackward               1        1              String             null              Nil                     Null       0  0  1  1  1  1                                                           Find                  "find_text_backward"          "Find Text (Backwards)"                       "Searches the current code file backwards (from the cursor) for a string."                                         ""                               }
   {FindNext                       1        1              Null               null              Nil                     Null       0  0  1  0  0  0                                                           Find                  "find_next"                   "Find Next"                                   "Searches the current code file forward (from the cursor) for the last searched string."                           ""                               }
   {FindPrev                       1        1              Null               null              Nil                     Null       0  0  1  0  0  0                                                           Find                  "find_prev"                   "Find Previous"                               "Searches the current code file backwards (from the cursor) for the last searched string."                         ""                               }
-  
+
   //- rjf: thread finding
   {FindThread                     1        1              Thread             null              Nil                     Thread     0  0  0  0  0  1                                                           Find                  "find_thread"                 "Find Thread"                                 "Jumps to the passed thread in either source code, disassembly, or both if they're already open."                  ""                               }
   {FindSelectedThread             1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Find                  "find_selected_thread"        "Find Selected Thread"                        "Jumps to the selected thread in either source code, disassembly, or both if they're already open."                ""                               }
-  
+
   //- rjf: name finding
   {GoToName                       1        1              String             symbol_lister     Nil                     Null       0  0  0  0  1  1                                                           Null                  "goto_name"                   "Go To Name"                                  "Searches for the passed string as a file, a symbol in debug info, and more, then jumps to it if possible."        ""                               }
   {GoToNameAtCursor               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "goto_name_at_cursor"         "Go To Name At Cursor"                        "Searches for the text at the cursor as a file, a symbol in debug info, and more, then jumps to it if possible."   ""                               }
-  
+
   //- rjf: watch expressions
   {ToggleWatchExpression          1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Binoculars            "toggle_watch_expr"           "Toggle Watch Expression"                     "Adds or removes an expression to an opened watch view."                                                           ""                               }
   {ToggleWatchExpressionAtCursor  1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Binoculars            "toggle_watch_expr_at_cursor" "Toggle Watch Expression At Cursor"           "Adds or removes the expression that the cursor or selection is currently over to an opened watch view."           ""                               }
   {ToggleWatchExpressionAtMouse   1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Binoculars            "toggle_watch_expr_at_mouse"  "Toggle Watch Expression At Mouse"            "Adds or removes the expression that the mouse is currently over to an opened watch view."                         ""                               }
-  
+
   //- rjf: memory view parameterization
   {SetColumns                     1        1              Null               null              Nil                     Null       0  0  0  0  1  1                                                           Thumbnails            "set_columns"                 "Set Columns"                                 "Sets the number of columns for a memory view."                                                                    ""                               }
-  
+
   //- rjf: disassembly view parameterization
   {ToggleAddressVisibility        1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Thumbnails            "toggle_address_visibility"   "Toggle Address Visibility"                   "Toggles the visibility of addresses in a disassembly view."                                                       ""                               }
   {ToggleCodeBytesVisibility      1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Thumbnails            "toggle_code_bytes_visibility""Toggle Code Bytes Visibility"                "Toggles the visibility of machine code bytes in a disassembly view."                                              ""                               }
-  
+
   //- rjf: general entity operations
   {EnableEntity                   0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "enable_entity"               "Enable Entity"                               "Enables an entity."                                                                                               ""                               }
   {DisableEntity                  0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "disable_entity"              "Disable Entity"                              "Disables an entity."                                                                                              ""                               }
@@ -424,7 +424,7 @@ RD_CmdTable:    //               |        |              |                  |   
   {ConditionEntity                0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "condition_entity"            "Condition Entity"                            "Equips an entity with a condition string."                                                                        ""                               }
   {DuplicateEntity                0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "duplicate_entity"            "Duplicate Entity"                            "Duplicates an entity."                                                                                            ""                               }
   {RelocateEntity                 0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "relocate_entity"             "Relocate Entity"                             "Relocates an entity."                                                                                             ""                               }
-  
+
   //- rjf: breakpoints
   {AddBreakpoint                  1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           CircleFilled          "add_breakpoint"              "Add Breakpoint"                              "Places a breakpoint at a given location (file path and line number, address, or symbol name)."                    ""                               }
   {AddAddressBreakpoint           1        0              Vaddr              null              Nil                     Null       0  0  0  0  1  1                                                           CircleFilled          "add_address_breakpoint"      "Add Address Breakpoint"                      "Places a breakpoint on the specified address."                                                                    ""                               }
@@ -432,32 +432,32 @@ RD_CmdTable:    //               |        |              |                  |   
   {ToggleBreakpoint               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           CircleFilled          "toggle_breakpoint"           "Toggle Breakpoint"                           "Places or removes a breakpoint at a given location (file path and line number, address, or symbol name)."         ""                               }
   {EnableBreakpoint               1        1              Entity             null              Breakpoint              Null       0  0  0  0  0  1                                                           CheckFilled           "enable_breakpoint"           "Enable Breakpoint"                           "Enables a breakpoint."                                                                                            ""                               }
   {DisableBreakpoint              1        1              Entity             null              Breakpoint              Null       0  0  0  0  0  1                                                           CheckHollow           "disable_breakpoint"          "Disable Breakpoint"                          "Disables a breakpoint."                                                                                           ""                               }
-  
+
   //- rjf: watch pins
   {AddWatchPin                    1        1              String             null              Nil                     Null       0  0  0  0  1  1                                                           Pin                   "add_watch_pin"               "Add Watch Pin"                               "Places a watch pin at a given location (file path and line number or address)."                                   ""                               }
   {ToggleWatchPin                 1        0              String             null              Nil                     Null       0  0  0  0  1  1                                                           Binoculars            "toggle_watch_pin"            "Toggle Watch Pin"                            "Places or removes a watch pin at a given location (file path and line number or address)."                        ""                               }
-  
+
   //- rjf: cursor operations
   {RunToCursor                    1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Play                  "run_to_cursor"               "Run To Cursor"                               "Runs the selected thread to the current cursor."                                                                  "line"                           }
   {SetNextStatement               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           RightArrow            "set_next_statement"          "Set Next Statement"                          "Sets the selected thread's instruction pointer to the cursor's position."                                         ""                               }
-  
+
   //- rjf: targets
   {AddTarget                      1        1              FilePath           null              Nil                     Null       1  0  0  0  0  1                                                           Target                "add_target"                  "Add Target"                                  "Adds a new target."                                                                                               "application,executable,debug"   }
   {SelectTarget                   1        1              Entity             null              Target                  Null       0  0  0  0  0  1                                                           Target                "select_target"               "Select Target"                               "Selects a target."                                                                                                ""                               }
   {EnableTarget                   1        1              Entity             null              Target                  Null       0  0  0  0  0  1                                                           CheckFilled           "enable_target"               "Enable Target"                               "Enables a target, in addition to all targets currently enabled."                                                  ""                               }
   {DisableTarget                  1        1              Entity             null              Target                  Null       0  0  0  0  0  1                                                           CheckHollow           "disable_target"              "Disable Target"                              "Disables a target."                                                                                               ""                               }
-  
+
   //- rjf: attaching
   {RegisterAsJITDebugger          1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "register_as_jit_debugger"    "Register As Just-In-Time (JIT) Debugger"     "Registers the RAD debugger as the just-in-time (JIT) debugger used by the operating system."                      ""                               }
-  
+
   //- rjf: snap-to-code-location
   {FindCodeLocation               0        1              FilePath           null              Nil                     Null       0  0  0  0  0  1                                                           FileOutline           "find_code_location"          "Find Code Location"                          "Finds a specific source code location given file, line, and column coordinates. Opens the file if necessary."     ""                               }
-  
+
   //- rjf: general-purpose view filtering
   {Filter                         1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Find                  "filter"                      "Filter"                                      "Begins filtering the active view."                                                                                "sort,search,filter,find"        }
   {ApplyFilter                    1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Find                  "apply_filter"                "Apply Filter"                                "Applies the typed filter to the active view."                                                                     "sort,search,filter,find,apply"  }
   {ClearFilter                    1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Find                  "clear_filter"                "Clear Filter"                                "Clears the filter applied to the active view."                                                                    "sort,search,filter,find,clear"  }
-  
+
   //- rjf: view drivers
   {GettingStarted                 1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           QuestionMark          "getting_started"             "Getting Started"                             "Opens the menu for information on getting started."                                                               "tutorial,help"                  }
   {Commands                       0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           List                  "commands"                    "Commands"                                    "Opens the list of all commands."                                                                                  ""                               }
@@ -483,16 +483,16 @@ RD_CmdTable:    //               |        |              |                  |   
   {Memory                         1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Grid                  "memory"                      "Memory"                                      "Opens a memory view."                                                                                             ""                               }
   {ExceptionFilters               1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Gear                  "exception_filters"           "Exception Filters"                           "Opens the exception filters view."                                                                                "exceptions,filters"             }
   {Settings                       1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Gear                  "settings"                    "Settings"                                    "Opens the settings view."                                                                                         "theme,color,scheme,options"     }
-  
+
   //- rjf: queries
   {PickFile                       0        0              FilePath           null              Nil                     Null       1  0  0  0  0  1                                                           FileOutline           "pick_file"                   "Pick File"                                   "Opens the file browser to pick a file."                                                                           ""                               }
   {PickFolder                     0        0              FilePath           null              Nil                     Null       0  1  0  0  0  1                                                           FolderOpenFilled      "pick_folder"                 "Pick Folder"                                 "Opens the file browser to pick a folder."                                                                         ""                               }
   {PickFileOrFolder               0        0              FilePath           null              Nil                     Null       1  1  0  0  0  1                                                           FileOutline           "pick_file_or_folder"         "Pick File/Folder"                            "Opens the file browser to pick a file or folder."                                                                 ""                               }
-  
+
   //- rjf: query completion
   {CompleteQuery                  0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "complete_query"              "Complete Query"                              "Completes a query."                                                                                               ""                               }
   {CancelQuery                    0        0              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "cancel_query"                "Cancel Query"                                "Cancels a query."                                                                                                 ""                               }
-  
+
   //- rjf: developer commands
   {ToggleDevMenu                  1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "toggle_dev_menu"             "Toggle Developer Menu"                       "Opens and closes the developer menu."                                                                             ""                               }
   {LogMarker                      1        1              Null               null              Nil                     Null       0  0  0  0  0  0                                                           Null                  "log_marker"                  "Log Marker"                                  "Logs a marker in the application log, to denote specific points in time within the log."                          ""                               }
@@ -549,7 +549,7 @@ RD_DefaultBindingTable:
   { "halt"                        X         ctrl     shift     0          }
   { "halt"                        Pause     0        0         0          }
   { "soft_halt_refresh"           R         0        0         alt        }
-  
+
   //- rjf: high-level composite target control operations
   { "run"                         F5        0        0         0          }
   { "restart"                     F5        ctrl     shift     0          }
@@ -557,24 +557,24 @@ RD_DefaultBindingTable:
   { "step_over"                   F10       0        0         0          }
   { "run_to_cursor"               F10       ctrl     0         0          }
   { "set_next_statement"          F10       ctrl     shift     0          }
-  
+
   //- rjf: font sizes
   { "inc_ui_font_scale"           Equal     0        0         alt        }
   { "dec_ui_font_scale"           Minus     0        0         alt        }
   { "inc_code_font_scale"         Equal     0        shift     alt        }
   { "dec_code_font_scale"         Minus     0        shift     alt        }
-  
+
   //- rjf: windows
   { "window"                      N         ctrl     shift     0          }
   { "toggle_fullscreen"           Return    ctrl     0         0          }
-  
+
   //- rjf: panel splitting
   { "new_panel_right"             P         ctrl     0         0          }
   { "new_panel_down"              Minus     ctrl     0         0          }
-  
+
   //- rjf: panel rotation
   { "rotate_panel_columns"        2         ctrl     0         0          }
-  
+
   //- rjf: focused panel changing
   { "next_panel"                  Comma     ctrl     0         0          }
   { "prev_panel"                  Comma     ctrl     shift     0          }
@@ -582,18 +582,18 @@ RD_DefaultBindingTable:
   { "focus_panel_left"            Left      ctrl     0         alt        }
   { "focus_panel_up"              Up        ctrl     0         alt        }
   { "focus_panel_down"            Down      ctrl     0         alt        }
-  
+
   //- rjf: undo/redo
   { "undo"                        Z         ctrl     0         0          }
   { "redo"                        Y         ctrl     0         0          }
-  
+
   //- rjf: focus history
   { "go_back"                     Left      0        0         alt        }
   { "go_forward"                  Right     0        0         alt        }
-  
+
   //- rjf: panel removal
   { "close_panel"                 P         ctrl     shift     alt        }
-  
+
   //- rjf: panel tab
   { "next_tab"                    PageDown  ctrl     0         0          }
   { "prev_tab"                    PageUp    ctrl     0         0          }
@@ -604,22 +604,22 @@ RD_DefaultBindingTable:
   { "close_tab"                   W         ctrl     0         0          }
   { "tab_bar_top"                 Up        ctrl     shift     alt        }
   { "tab_bar_bottom"              Down      ctrl     shift     alt        }
-  
+
   //- rjf: files
   { "open"                        O         ctrl     0         0          }
   { "reload_active"               R         ctrl     shift     0          }
   { "switch"                      I         ctrl     0         0          }
   { "switch_to_partner_file"      O         0        0         alt        }
-  
+
   //- rjf: setting config paths
   { "open_user"                   O         ctrl     shift     alt        }
   { "open_project"                O         ctrl     0         alt        }
-  
+
   //- rjf: meta controls
   { "edit"                        F2        0        0         0          }
   { "accept"                      Return    0        0         0          }
   { "cancel"                      Esc       0        0         0          }
-  
+
   //- rjf: directional movement & text controls
   { "move_left"                   Left      0        0         0          }
   { "move_right"                  Right     0        0         0          }
@@ -662,7 +662,7 @@ RD_DefaultBindingTable:
   { "paste"                       V         ctrl     0         0          }
   { "paste"                       Insert    0        shift     0          }
   { "insert_text"                 Null      0        0         0          }
-  
+
   //- rjf: code navigation
   { "goto_line"                   G         ctrl     0         0          }
   { "goto_address"                G         0        0         alt        }
@@ -670,34 +670,34 @@ RD_DefaultBindingTable:
   { "find_text_backward"          R         ctrl     0         0          }
   { "find_next"                   F3        0        0         0          }
   { "find_prev"                   F3        shift    0         0          }
-  
+
   //- rjf: thread finding
   { "find_selected_thread"        F4        0        0         0          }
-  
+
   //- rjf: name finding
   { "goto_name"                   J         ctrl     0         0          }
   { "goto_name_at_cursor"         F12       0        0         0          }
-  
+
   //- rjf: watch expressions
   { "toggle_watch_expr_at_cursor" W         0        0         alt        }
   { "toggle_watch_expr_at_mouse"  D         ctrl     0         0          }
   { "toggle_watch_pin"            F9        ctrl     0         0          }
-  
+
   //- rjf: breakpoints
   { "toggle_breakpoint"           F9        0        0         0          }
-  
+
   //- rjf: targets
   { "add_target"                  T         ctrl     0         0          }
-  
+
   //- rjf: attaching
   { "attach"                      F6        0        shift     0          }
-  
+
   //- rjf: filtering
   { "filter"                      Slash     ctrl     0         0          }
-  
+
   //- rjf: command lister
   { "run_command"                 F1        0        0         0          }
-  
+
   //- rjf: developer commands
   { "log_marker"                  M         ctrl     shift     alt        }
 }
@@ -721,7 +721,7 @@ RD_BindingVersionRemapTable:
   {"address_breakpoint" "add_address_breakpoint"}
   {"function_breakpoint" "add_function_breakpoint"}
   {"toggle_breakpoint_cursor" "toggle_breakpoint"}
-  
+
 }
 
 @data(String8) rd_binding_version_remap_old_name_table:
@@ -835,17 +835,17 @@ RD_CollectionTable:
   {watch_pins                     WatchPin         Null              x}
   {file_path_maps                 FilePathMap      Null              x}
   {auto_view_rules                AutoViewRule     Null              x}
-  
+
   //- rjf: control entity groups
   {machines                       Nil              Machine           x}
   {processes                      Nil              Process           x}
   {threads                        Nil              Thread            x}
   {modules                        Nil              Module            x}
-  
+
   //- rjf: scheduling control entity hierarchies
   {scheduler_machine              Nil              Null              x}
   {scheduler_process              Nil              Null              x}
-  
+
   //- rjf: debug info / architecture watch tables
   {locals                         Nil              Null              -}
   {registers                      Nil              Null              -}
@@ -907,14 +907,14 @@ RD_ViewRuleTable:
   //- rjf: basics
   { Empty                  empty                  ""                           ""                                                 Null            0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
   { GettingStarted         getting_started        "Getting Started"            ""                                                 QuestionMark    0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
-  
+
   //- rjf: meta (settings)
   { ExceptionFilters       exception_filters      "Exception Filters"          ""                                                 Gear            0 0 0 0 0 0     1 "An interface which controls whether or not the debugger will halt attached processes upon encountering specific exception codes for the first time."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
   { Settings               settings               "Settings"                   ""                                                 Gear            0 0 0 0 0 0     1 "An interface to modify general settings for the debugger's appearance and behavior."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
-  
+
   //- rjf: temporary view for loading files - must analyze file before picking viewer
   { PendingFile            pending_file           "Pending File"               ""                                                 FileOutline     0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
-  
+
   //- rjf: query listers
   { Commands               commands               "Commands"                   ""                                                 List            0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
   { FileSystem             file_system            "File System"                ""                                                 FileOutline     0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
@@ -922,7 +922,7 @@ RD_ViewRuleTable:
   { EntityLister           entity_lister          "Entities"                   ""                                                 Null            0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
   { CtrlEntityLister       ctrl_entity_lister     "Control Entities"           ""                                                 Null            0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
   { SymbolLister           symbol_lister          "Symbols"                    ""                                                 Null            0 0 0 0 0 0     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
-  
+
   //- rjf: watch or watch-style tables
   { Watch                  watch                  "Watch"                      ""                                                 Binoculars      1 1 1 0 0 0     1 "The familiar 'watch window' debugger interface. Allows the inputting of a number of expressions. Each expression in the table is evaluated within the context of the selected thread's selected call stack frame. If applicable (depending on visualization rules and the expression's type), these expressions may be hierarchically expanded, which displays children as more rows in the table. The values of these expressions may also be edited, and if possible, can be used to write to registers or memory in attached processes. Also contains a new *view rule* column, not found in other major debuggers, which allows per-row specification of various visualization rules. These view rules may be used to visualize and inspect the evaluation of expressions in a variety of ways. To learn more, read the 'View Rules' section."                                                        }
   { Locals                 locals                 "Locals"                     ""                                                 Binoculars      1 1 1 0 0 0     1 "Nearly identical to `Watch`, but automatically filled with local variables found within the selected call stack frame of the selected thread, according to the associated debug info. View rules and evaluation values can be edited, like in `Watch`, but unlike `Watch`, expressions cannot be edited or added to the table."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           }
@@ -931,19 +931,19 @@ RD_ViewRuleTable:
   { ThreadLocals           thread_locals          "Thread Locals"              ""                                                 Binoculars      1 1 1 0 0 0     1 "Nearly identical to `Watch`, but automatically filled with all thread local variables within the selected thread's module. View rules and evaluation values can be edited, like in `Watch`, but unlike `Watch`, expressions cannot be edited or added to the table."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      }
   { Types                  types                  "Types"                      ""                                                 Binoculars      1 1 1 0 0 0     1 "Nearly identical to `Watch`, but automatically filled with all types within the selected thread's module. View rules can be edited, like in `Watch`, but unlike `Watch`, expressions cannot be edited or added to the table."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             }
   { Procedures             procedures             "Procedures"                 ""                                                 Binoculars      1 1 1 0 0 0     1 "Nearly identical to `Watch`, but automatically filled with all procedures within the selected thread's module. View rules can be edited, like in `Watch`, but unlike `Watch`, expressions cannot be edited or added to the table."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }
-  
+
   //- rjf: configuration watch tables
   { Targets                targets                "Targets"                    ""                                                 Target          1 1 1 0 0 0     1 "Displays a list of all targets, as well as controls for enabling, disabling, launching, editing, or deleting each target. For more information on targets, read the `Targets` section."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
   { FilePathMap            file_path_map          "File Path Map"              ""                                                 FileOutline     1 1 1 0 0 0     1 "Displays a table of *path maps*. Each path map is a pair of file or folder paths, one being a 'source' path, and one being a 'destination' path. These pairs are used by the debugger when automatically searching for specific files - for instance, when attempting to snap to a source code location specified by debug info. If debug info refers to a path on the machine on which a target executable was originally built, but that path is not valid on the debugger machine, but some alternative path exists, then path maps may be used to redirect the debugger from the debug info's specified paths to the associated appropriate debugger machine file paths."                                                                                                                                                                                                                             }
   { AutoViewRules          auto_view_rules        "Auto View Rules"            ""                                                 Binoculars      1 1 1 0 0 0     1 "Displays a table of *auto view rules*. Each *auto view rule* is a pair, with one element being a type, and the other being a view rule, which should be automatically applied to expressions of that type, when possible."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
   { Breakpoints            breakpoints            "Breakpoints"                ""                                                 CircleFilled    1 1 1 0 0 0     1 "Displays a table of all breakpoints, containing information about each breakpoint's name, location, and hit count. Also contains per-breakpoint controls for enabling, deleting, or editing each breakpoint. For more information on breakpoints and their features, read the 'Breakpoints' section."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     }
   { WatchPins              watch_pins             "Watch Pins"                 ""                                                 Pin             1 1 1 0 0 0     1 "Displays a table of all watch pins (watched expressions, like those found in `Watch`, but instead of being within a table, being pinned to some source code location, like breakpoints). This table contains each pin's name, location, and controls for editing or deleting each pin."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   }
-  
+
   //- rjf: debug entity info watch tables
   { Scheduler              scheduler              "Scheduler"                  ""                                                 Scheduler       1 1 1 0 0 0     1 "Displays all processes and threads to which the debugger is currently attached, and contains controls for selecting and freezing threads."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
   { CallStack              call_stack             "Call Stack"                 ""                                                 Thread          1 1 1 0 0 0     1 "Displays the call stack of the currently selected thread. Each frame in the call stack contains the associated module, function name, and return address. Allows selection of a particular call stack frame other than the top."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          }
   { Modules                modules                "Modules"                    ""                                                 Module          1 1 1 0 0 0     1 "Displays a table of all modules currently loaded by any process to which the debugger is attached. This table displays each module's name, virtual address range in the containing process' address space, and which debug info file is being used by the debugger for the associated module."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
-  
+
   //- rjf: data visualizers
   { Text                   text                   "Text"                       "x:{'lang':lang, 'size':expr}"                     FileOutline     0 0 0 1 0 1     0 ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
   { Disasm                 disasm                 "Disassembly"                "x:{'arch':arch, 'size':expr}"                     Glasses         0 0 0 1 0 1     1 "Displays disassembled instructions in a textual form from the selected thread's containing process virtual address space."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
@@ -1016,7 +1016,7 @@ RD_ThemePresetTable:
 RD_ThemeColorTable:
 {
   {Null                           "Null"                              null                                   0xff00ffff          0xff00ffff          0xff00ffff          0xff00ffff          0xff00ffff          0xff00ffff          0xff00ffff          0xff00ffff          0xff00ffff          ""}
-  
+
   //- rjf: global ui colors
   {Text                           "Text"                              text                                   0xe5e5e5ff          0x4c4c4cff          0xe5e5e5ff          0x000000ff          0x999999ff          0x333333ff          0xa08462ff          0x90b080ff          0x00fefeff          ""}
   {TextPositive                   "Text (Positive)"                   text_positive                          0x4dc221ff          0x4d9e2eff          0x4dc221ff          0x4dc221ff          0x4dc221ff          0x4dc221ff          0x4dc221ff          0x4dc221ff          0x4dc221ff          ""}
@@ -1034,22 +1034,22 @@ RD_ThemeColorTable:
   {SelectionOverlay               "Selection Overlay"                 selection_overlay                      0x99ccff4c          0x003d7a48          0x99ccff4c          0x3d74ab4b          0x99ccff4c          0x678cb24c          0x99ccff4c          0x99ccff4c          0x99ccff4c          ""}
   {HighlightOverlay               "Highlight Overlay"                 highlight_overlay                      0xffffff1e          0xffffff1e          0xffffff1e          0x0000001e          0xffffff1e          0xffffff1e          0xffffff1e          0xffffff1e          0xffffff1e          ""}
   {HighlightOverlayError          "Error Highlight Overlay"           error_highlight_overlay                0x5f12005f          0xff30005f          0x5f12005f          0x5f12005f          0x5f12005f          0x5f12005f          0x5f12005f          0x5f12005f          0x5f12005f          ""}
-  
+
   //- rjf: base ui container colors
   {BaseBackground                 "Base Background"                   base_background                        0x1b1b1bfe          0xccccccfe          0x1b1b1bfe          0xfefefefe          0x002a35fe          0xfcf5e2fe          0x0c0c0cfe          0x0c0c0cfe          0x000081fe          ""}
   {BaseBackgroundAlt              "Base Background (Alternate)"       base_background_alt                    0x222222fe          0x2b2b2bfe          0x1b1b1bfe          0xe7e7e7fe          0x2b2b2bfe          0x2b2b2bfe          0x2b2b2bfe          0x2b2b2bfe          0x2b2b2bfe          ""}
   {BaseBorder                     "Base Border"                       base_border                            0x3f3f3ffe          0xa4a4a4fe          0x3f3f3ffe          0xb6b6b6ff          0xfefefe3a          0xbebaabfe          0x423525fe          0x3f3f3ffe          0x0000fffe          ""}
-  
+
   //- rjf: menu bar ui container colors
   {MenuBarBackground              "Menu Bar Background"               menu_bar_background                    0x3e4c577f          0xeaeaea7f          0x1b1b1bfd          0xffffff7f          0x00202bff          0xeee8d5ff          0x0c0c0cfe          0x0c0c0cfe          0x007d7dff          ""}
   {MenuBarBackgroundAlt           "Menu Bar Background (Alternate)"   menu_bar_background_alt                0x3e4c577f          0x3e4c577f          0x1b1b1bfd          0xffffff7f          0x3e4c577f          0x3e4c577f          0x3e4c577f          0x3e4c577f          0x007d7dff          ""}
   {MenuBarBorder                  "Menu Bar Border"                   menu_bar_border                        0xffffff19          0xa4a4a4fe          0x3f3f3ffe          0xb6b6b6ff          0xffffff19          0xbebaabfe          0xffffff19          0xffffff19          0xfefefe00          ""}
-  
+
   //- rjf: floating ui container colors
   {FloatingBackground             "Floating Background"               floating_background                    0x33333333          0xccccccc0          0x33333333          0xfefefec7          0x007fa14e          0xffffff7c          0x0c0c0c32          0x0c0c0c3e          0x007c7c55          ""}
   {FloatingBackgroundAlt          "Floating Background (Alternate)"   floating_background_alt                0x33333333          0x33333333          0x33333333          0x33333333          0x33333333          0x33333333          0x33333333          0x33333333          0x33333333          ""}
   {FloatingBorder                 "Floating Border"                   floating_border                        0x3f3f3ffd          0xa4a4a4fe          0x3f3f3ffd          0xb6b6b6ff          0xfdfdfd3a          0xbebaabfe          0x423425fe          0x3f3f3ffd          0x00ffff55          ""}
-  
+
   //- rjf: ui element colors
   {ImplicitButtonBackground       "Implicit Button Background"        implicit_button_background             0x00000000          0x00000000          0x00000000          0x00000000          0x00000000          0x00000000          0x00000000          0x00000000          0x00000000          ""}
   {ImplicitButtonBorder           "Implicit Button Border"            implicit_button_border                 0x00000000          0x00000000          0x00000000          0x00000000          0x00000000          0xbdb9aa00          0x00000000          0x00000000          0x00000000          ""}
@@ -1067,7 +1067,7 @@ RD_ThemeColorTable:
   {TabBorder                      "Tab Border"                        tab_border                             0xfefefe4d          0xffffff4d          0xfefefe4d          0xb6b6b6ff          0xfefefe4d          0xbebaabfe          0xfefefe4d          0xfefefe4d          0xfefefe4d          ""}
   {TabBackgroundInactive          "Tab Background (Inactive)"         tab_background_inactive                0x3e4c577f          0x8282827f          0xfefefe14          0xcdd4dc7f          0x3e4c577f          0xd4cfc0fe          0x131315ee          0x3a3a3a7f          0x3e4c577f          ""}
   {TabBorderInactive              "Tab Border (Inactive)"             tab_border_inactive                    0xffffff19          0xffffff19          0xffffff00          0xb6b6b6ff          0xffffff19          0xbebaabfe          0xffffff19          0x00000019          0xfefefe19          ""}
-  
+
   //- rjf: code colors
   {CodeDefault                    "Code (Default)"                    code_default                           0xcbcbcbff          0x4d4d4dff          0xcbcbcbff          0x000000ff          0xcbcbcbff          0x657b83ff          0xa08462ff          0x90b080ff          0x00fefeff          ""}
   {CodeSymbol                     "Code (Symbol)"                     code_symbol                            0x42a2cffe          0x205670fe          0xdcdcaaff          0x000000ff          0xcb4a15ff          0xcb4a15ff          0xcc5634ff          0x42a2cffe          0x65b1ffff          ""}
@@ -1083,7 +1083,7 @@ RD_ThemeColorTable:
   {CodeComment                    "Code (Comment)"                    code_comment                           0x717171ff          0x4b4b4bff          0x57a54aff          0x008000ff          0x556a6fff          0x93a1a1ff          0x686868ff          0x1e8fefff          0xffffffff          ""}
   {CodeLineNumbers                "Code Line Numbers"                 code_line_numbers                      0x7f7f7fff          0x4b4b4bff          0x2a91afff          0x227893ff          0x566c73ff          0x227893ef          0xa08462ff          0x7e7e7ffe          0x007d7dff          ""}
   {CodeLineNumbersSelected        "Code Line Numbers (Selected)"      code_line_numbers_selected             0xbebebeff          0x000000ff          0x9ddaecff          0x123d4bfe          0xa2aaacff          0x111e22ef          0xc8b399ff          0xbebebeff          0x00fefeff          ""}
-  
+
   //- rjf: debugging colors
   {LineInfoBackground0            "Line Info Background 0"            line_info_background_0                 0x99503d3f          0x99503d3f          0x99503d3f          0x99503d3f          0x99503d3f          0x99503d3f          0x99503d3f          0x99503d3f          0x99503d3f          ""}
   {LineInfoBackground1            "Line Info Background 1"            line_info_background_1                 0xfe82493f          0xfe82493f          0xfe82493f          0xfe82493f          0xfe82493f          0xfe82493f          0xfe82493f          0xfe82493f          0xfe82493f          ""}
@@ -1256,7 +1256,7 @@ raddbg_readme:
 {
   @title "The RAD Debugger (ALPHA)";
   @p "The RAD Debugger is a native, user-mode, multi-process, graphical debugger. It currently only supports local-machine Windows x64 debugging with PDBs, with plans to expand and port in the future.";
-  
+
   @subtitle "Getting Started";
   @p "To launch the RAD Debugger with your executable and command line arguments, run `raddbg` from the command line like so:";
   @p "```raddbg my_program.exe --foo --bar --baz```";
@@ -1300,7 +1300,7 @@ raddbg_readme:
   @p "Multiple view rules can be specified on one line, so they can be combined like so:";
   @p "```array:16, hex, only: {x, y, z}```";
   @p "For more information, see the 'View Rules' section.";
-  
+
   @subtitle "Command-Line Usage";
   @p "When run normally, either by launching through a file explorer or running from a command line without arguments, `raddbg` will open a new instance of the debugger, and await further operations. But it also supports a number of command line options for a number of other purposes. These options are specified with a `-` or `--` prefix, followed by the name of the option, and if the option requires a parameter, followed by a `:` or `=`, followed by the parameter's content. A list of the possible options follows:";
   @unordered_list
@@ -1323,7 +1323,7 @@ raddbg_readme:
     @p "`raddbg --ipc find_code_location \"c:/foo/bar/baz.c:123:1\"` `--ipc` configures `raddbg` to drive another instance of `raddbg`. The remainder of the text is interpreted as a command.";
     @p "`raddbg \"C:/path with spaces/test.exe\" --foo --bar` A target is formed from the `test.exe` path, and `--foo --bar` are interpreted as arguments to the `test.exe` target.";
   }
-  
+
   @subtitle "Windows, Panels, & Tabs";
   @p "Each opened *window* in the debugger frontend is subdivided into *panels*. Panels subdivide regions of their window without overlapping. Each panel can contain multiple *tabs*, and can have one tab selected at any time. Tabs can be dragged and dropped between panels. Each tab is used to view one of the many supported debugger interfaces, including source code, disassembly, memory, or watches. When a tab is selected, that interface will fill the tab's containing panel's region of the containing window.";
   @p "There are no 'special' windows, panels, or tabs; the debugger is written such that the number of windows, each window's panel organization, and the placement and arrangement of tabs can all be organized in a large variety of ways.";
@@ -1332,7 +1332,7 @@ raddbg_readme:
   {
     @expand(RD_ViewRuleTable a) @p "$(a.show_in_docs -> '`'..a.display_name..'` '..a.description)";
   }
-  
+
   @subtitle "Commands";
   @p "The debugger is operated with *commands*. Commands may be manually executed in the debugger UI through the `Commands` menu, which you can open with the `Run Command` keybinding, which is F1 by default). Operations in the debugger UI are implemented with commands, so if it's ever unclear how to accomplish some operation through the UI, a useful fallback is searching for and running the command through the command menu.";
   @p "Commands are also how a debugger instance launched with `--ipc` may communicate with a primary debugger instance.";
@@ -1342,12 +1342,12 @@ raddbg_readme:
     @expand(D_CmdTable a) @p "$(a.ipc_docs_vis == 1 -> '`'..a.display_name..'` '..'(`'..a.string..'`) '..a.desc)";
     @expand(RD_CmdTable a) @p "$(a.ipc_docs_vis == 1 -> '`'..a.display_name..'` '..'(`'..a.string..'`) '..a.desc)";
   }
-  
+
   @subtitle "Targets";
   @p "A *target* is one executable and configuration for launching that executable, including command line arguments and working directory (the directory from which the executable is launched). Each target may also have a custom label (replaces the executable path when visualizing the target), and the name of a custom entry point function (when the default entry points - `main`, `WinMain`, etc. - are not desired when stepping into the program upon launch). The debugger can have several targets at once. Each target can also be enabled or disabled. Some operations work on all enabled targets - for instance, the `Run` or `Kill All` commands (standardly bound as F5 or Shift + F5). Enabling and disabling targets allows one to filter which targets are currently being worked with.";
   @p "To add a target, you can run the `Add Target` command. A target is also created automatically from command line arguments - the rules for how this happens can be found in the `Command-Line Usage` section.";
   @p "Targets created through command line usage are temporary, meaning they are not persistently saved across runs of the debugger. To change this, you can right click the command-line-created target in the `Targets` view, and click `Save To Project`. After doing so, the target will be restored across runs, and will no longer need to be specified on the command-line.";
-  
+
   @subtitle "View Rules";
   @p "*View rules* are used to transform the way that evaluations in the debugger are visualized. An evaluation is produced by taking an expression string - for instance, the name of a variable - and using debug info and information from an attached process' live runtime (memory, registers, and so on) to interpret it.";
   @p "Evaluations may be visualized in a variety of ways. A 64-bit unsigned integer may be visualized as a textual representation of the value with a radix of 10. A 32-bit floating-point value may be visualized as a textual representation of the value. An array of 32-bit floating-point values can be visualized as a list of textual representations of those values.";
@@ -1358,19 +1358,19 @@ raddbg_readme:
   {
     @expand(D_ViewRuleTable a) @p "$(a.docs == 'x' -> '`'..a.string..'` ('..a.display_name..') '..a.description)";
   }
-  
+
   @subtitle "Breakpoints";
   @p "Breakpoints interrupt execution of attached processes. They may be placed on specific code addresses, lines of source code, on specific symbol names. In the latter two cases, the higher level locations are resolved to code addresses. If there is no code associated with a line of source code, then the resolution path chooses to use the next closest line of source code in the same file. A symbol name breakpoint will only work if the symbol name is found within loaded debug info.";
   @p "Breakpoints may have stop conditions attached to them. When a breakpoint is hit by a thread, before it stops execution, the stop condition is evaluated, and if it evaluates to a nonzero value, only then is execution stopped.";
   @p "Each breakpoint has a hit count. Every time a breakpoint causes execution to stop, this counter is increased.";
   @p "Processor breakpoints are not currently supported, but planned to be in the future.";
-  
+
   @subtitle "User & Project Files";
   @p "Applicable state controlling the debugger's appearance, behavior, targets, breakpoints, and other configurations is saved and reloaded across runs of the debugger through both *user files* and *project files*. These files are auto-saved. These files are written in a textual format which can be hand-edited as necessary, but they're also continuously re-read and re-written by the debugger. By default, the debugger uses `%appdata%/raddbg/default.raddbg_user` for its user file path, and `%appdata%/raddbg/default.raddbg_project` for its project file path. These paths can be overridden on the command line (see the 'Command-Line Usage' section).";
   @p "The *user file* defaultly stores file path maps, windows (including their preferred monitor, placement, and size), each window's panel layout and tabs, keybindings, theme colors, and fonts.";
   @p "The *project file* defaultly stores targets, breakpoints, watch pins, and exception code filters.";
   @p "Because both can be hand-edited, however, if you want to store something normally stored in a user file in a project file, or vice versa, this can be done by hand transferring the textual data from one file to another. There is no path in the debugger's UI to support this transfer, currently, although this is planned.";
-  
+
   @subtitle "Driving Another Debugger Instance";
   @p "When the debugger is launched with the `--ipc` command-line argument, it does not launch another instance of the graphical debugger. Instead, it launches, sends a string encoding a command to a running instance of the graphical debugger, and then terminates. The set of commands which can be sent are identical to those which can be run from the debugger's UI itself, but these commands must be encoded textually (through the other command-line arguments). These commands are described in the 'Commands' section.";
 }
