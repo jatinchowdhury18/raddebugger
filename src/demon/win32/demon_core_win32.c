@@ -1317,9 +1317,21 @@ dmn_ctrl_launch(DMN_CtrlCtx *ctx, OS_ProcessLaunchParams *params)
       MessageBox(0, "Error starting process.", "Process error", MB_OK|MB_ICONSTOP);
     }
 
-    if(! params->leave_console_open)
+    if(params->leave_console_open)
     {
-        FreeConsole();
+      HWND hwnd = GetConsoleWindow();
+      if(hwnd != NULL)
+      {
+        HMENU hMenu = GetSystemMenu(hwnd, FALSE);
+        if(hMenu != NULL)
+        {
+          EnableMenuItem(hMenu, SC_CLOSE, MF_BYCOMMAND | MF_DISABLED | MF_GRAYED);
+        }
+      }
+    }
+    else
+    {
+      FreeConsole();
     }
 
     //- rjf: eliminate all handles which have stuck around from the AllocConsole
